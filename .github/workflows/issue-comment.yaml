@@ -1,11 +1,13 @@
 on:
   issue_comment:
-    types: [created, deleted]
+    types: [created]
 
 name: ci
 jobs:
   run:
-    runs-on: ubuntu-18.04
+    name: PR comment
+    if: ${{ github.event.issue.pull_request }}
+    runs-on: ubuntu-latest
     steps:
     - name: Dump GitHub context
       env:
