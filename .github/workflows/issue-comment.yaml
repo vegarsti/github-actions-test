@@ -18,7 +18,7 @@ jobs:
       run: exit 1
     - name: Message success
       if: ${{ success() }}
-      uses: actions/github-script@v4
+      uses: actions/github-script@v6
       with:
         script: |
           github.issues.createComment({
