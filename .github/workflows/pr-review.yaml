@@ -2,7 +2,7 @@ on:
   pull_request_review:
     types: [submitted]
 
-name: ci
+name: pr
 jobs:
   run:
     runs-on: ubuntu-18.04
