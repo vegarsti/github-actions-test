@@ -1,0 +1,14 @@
+on:
+  issue_comment:
+    types: [created, deleted]
+
+name: ci
+jobs:
+  run:
+    runs-on: ubuntu-18.04
+    steps:
+    - name: Dump GitHub context
+      env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}
+      run: |
+        echo "$GITHUB_CONTEXT"
