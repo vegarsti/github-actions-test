@@ -5,7 +5,7 @@ on:
 name: pr
 jobs:
   run:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
     - name: Dump GitHub context
       env:
