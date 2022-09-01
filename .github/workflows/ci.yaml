@@ -1,0 +1,8 @@
+on: [push]
+name: ci
+jobs:
+  run:
+    runs-on: ubuntu-18.04
+    steps:
+    - name: Dummy action
+      run: echo "hello"
