@@ -1,12 +1,11 @@
 on:
-  issue_comment:
-    types: [created]
+  check_run:
+    types: [completed]
 
-name: comment
+name: check
 jobs:
   run:
-    name: PR comment
-    if: ${{ github.event.issue.pull_request }}
+    name: Check run
     runs-on: ubuntu-latest
     steps:
     - name: Dump GitHub context
