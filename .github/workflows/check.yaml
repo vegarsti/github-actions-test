@@ -1,6 +1,4 @@
-on:
-  check_run:
-    types: [completed]
+on: check_run
 
 name: check
 jobs:
