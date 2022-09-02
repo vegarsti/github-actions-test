@@ -6,7 +6,7 @@ name: comment
 jobs:
   run:
     name: PR comment
-    if: ${{ github.event.issue.pull_request }}
+    if: ${{ (github.event.issue.pull_request) && (github.event.comment.body == "trigger words")}}
     runs-on: ubuntu-latest
     env:
       COMMENT: ${{ github.event.comment.body }}
