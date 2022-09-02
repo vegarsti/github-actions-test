@@ -8,11 +8,14 @@ jobs:
     name: PR comment
     if: ${{ github.event.issue.pull_request }}
     runs-on: ubuntu-latest
+    env:
+      COMMENT: ${{ github.event.comment.body }}
     steps:
     - name: Dump GitHub context
       env:
         GITHUB_CONTEXT: ${{ toJson(github) }}
       run: |
+        echo "$COMMENT"
         echo "$GITHUB_CONTEXT"
     - name: Fail
       run: exit 1
