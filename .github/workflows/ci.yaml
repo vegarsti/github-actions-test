@@ -6,3 +6,15 @@ jobs:
     steps:
     - name: Dummy action
       run: echo "hello"
+    - name: Create failure check
+      uses: actions/github-script@v6
+      with:
+        script: |
+          github.rest.repos.createCommitStatus({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            sha: context.sha,
+            state: 'failure',
+            description: 'hello world',
+            context: 'testing'
+          });
